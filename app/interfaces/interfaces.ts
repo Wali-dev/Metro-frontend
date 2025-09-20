@@ -13,13 +13,13 @@ export interface Instruction {
     format_type: string;
     is_published?: boolean;
     views_count?: number;
+
     banner_image?: string;
     createdAt?: string;
     updatedAt?: string;
     __v?: number;
     theme_settings?: {
-        color: string;
-        font: string;
+        theme?: string;
     };
     steps?: Step[];
 }
@@ -32,9 +32,10 @@ export interface InstructionResponse {
 
 export interface Step {
     _id?: string;
+    instruction_id?: string;
     step_order: number;
     title: string;
     description?: string;
     image_url?: string;
-    video_url: string;
+    video_url?: string;
 }
