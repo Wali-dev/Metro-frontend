@@ -21,6 +21,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { api } from "@/app/services/api"
+import { IconPlus } from '@tabler/icons-react'
 
 export default function SectionHeader() {
     const [title, setTitle] = useState('')
@@ -61,7 +62,8 @@ export default function SectionHeader() {
         <div className="flex justify-end my-4 mx-8">
             <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                 <DialogTrigger asChild>
-                    <Button variant="outline" onClick={() => setIsDialogOpen(true)}>
+                    <Button variant="default" onClick={() => setIsDialogOpen(true)}>
+                        <IconPlus className="mr-1 h-4 w-4" />
                         Add
                     </Button>
                 </DialogTrigger>

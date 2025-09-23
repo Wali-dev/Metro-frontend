@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="suppressHydrationWarning">
       <body
-        className={`antialiased ${typeof window !== "undefined" ? `${geistSans.variable} ${geistMono.variable}` : ""}`}
+        className={`antialiased ${geistSans.variable} ${geistMono.variable}`}
       >
         <ThemeProvider
           attribute="class"

@@ -39,3 +39,9 @@ export interface Step {
     image_url?: string;
     video_url?: string;
 }
+
+export interface InstructionResponseById {
+    success: boolean;
+    message: string;
+    instruction: Instruction;
+}

@@ -29,6 +29,7 @@ import { IconMenu3 } from '@tabler/icons-react';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { FileEdit, Trash2 } from 'lucide-react';
 import { useRouter } from 'next/navigation'
+import stringTrimmer from '@/utils/stringTrimmer';
 
 const Page = () => {
     const [instructions, setInstructions] = useState<Instruction[]>([]);
@@ -79,6 +80,9 @@ const Page = () => {
         }
     }
 
+    // Get a instance of the functionn from the utils
+    const trimmer = stringTrimmer;
+
     // Skeleton loader card
     const renderSkeleton = () => (
         <Card className="w-full animate-pulse">
@@ -108,7 +112,13 @@ const Page = () => {
                             <Card key={item._id} className="w-full cursor-pointer" onClick={() => handleRedirection(item)}>
                                 <CardHeader>
                                     <CardTitle>{item.title}</CardTitle>
-                                    <CardDescription>{item.description}</CardDescription>
+                                    <CardDescription>
+                                        {typeof item.description === 'string'
+                                            ? (item.description.length > 60
+                                                ? trimmer(item.description, 60)
+                                                : item.description)
+                                            : ''}
+                                    </CardDescription>
                                     <CardAction>
                                         <DropdownMenu>
                                             <DropdownMenuTrigger asChild>

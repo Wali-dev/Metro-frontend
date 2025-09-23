@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig } from "axios";
-import { Instruction, Step } from "../interfaces/interfaces";
+import { Instruction } from "../interfaces/interfaces";
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
@@ -33,6 +33,7 @@ export const api = {
     getInstructionsByUser: (userId: string) => fetcher(`/instruction/user/${userId}`),
     addInstruction: (data: Instruction) => fetcher(`/instruction/`, { method: "POST", data }),
     deleteInstruction: (instruction_id: string) => fetcher(`/instruction/${instruction_id}`, { method: "DELETE" }),
+    getInstructionsById: (instructionId: string) => fetcher(`/instruction/${instructionId}`),
 
     updateInstructions: (id: string, data: Instruction) => fetcher(`/instruction/${id}`, { method: "PUT", data }),
     saveSteps: (data: Instruction) => fetcher(`/step/`, { method: "POST", data }),
