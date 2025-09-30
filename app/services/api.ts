@@ -1,11 +1,12 @@
 import axios, { AxiosRequestConfig } from "axios";
 import { Instruction } from "../interfaces/interfaces";
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+// const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 // Create a central Axios instance
 const axiosInstance = axios.create({
-    baseURL: BASE_URL,
+    // baseURL: BASE_URL,
+    baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
     headers: {
         "Content-Type": "application/json",
     },
