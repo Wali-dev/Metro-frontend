@@ -31,8 +31,10 @@ import { FileEdit, Trash2 } from 'lucide-react';
 import { useRouter } from 'next/navigation'
 import stringTrimmer from '@/utils/stringTrimmer';
 
+import { useInstructionStore } from '@/app/store/instructionStore';
+
 const Page = () => {
-    const [instructions, setInstructions] = useState<Instruction[]>([]);
+    const { instructions, setInstructions, removeInstruction, setSelectedInstruction } = useInstructionStore();
     const [loading, setLoading] = useState(true);
     const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
     const [instructionToDelete, setInstructionToDelete] = useState<string | null>(null);
@@ -65,6 +67,7 @@ const Page = () => {
         try {
             await api.deleteInstruction(instructionToDelete);
             setInstructions(instructions.filter(item => item._id !== instructionToDelete));
+            removeInstruction(instructionToDelete);
             setDeleteDialogOpen(false);
             setInstructionToDelete(null);
         } catch (error) {
@@ -73,12 +76,9 @@ const Page = () => {
     };
 
     const handleRedirection = (item: Instruction) => {
-        try {
-            router.push(`/dashboard/instructions/${item._id}?data=${encodeURIComponent(JSON.stringify(item))}`)
-        } catch (error) {
-            console.error(error)
-        }
-    }
+        setSelectedInstruction(item); // store globally
+        router.push(`/dashboard/instructions/${item._id}`);
+    };
 
     // Get a instance of the functionn from the utils
     const trimmer = stringTrimmer;
