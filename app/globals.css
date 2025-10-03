@@ -98,6 +98,11 @@
   --shadow-lg: 4px 4px 0px 0px hsl(0 0% 0% / 1.00), 4px 4px 6px -1px hsl(0 0% 0% / 1.00);
   --shadow-xl: 4px 4px 0px 0px hsl(0 0% 0% / 1.00), 4px 8px 10px -1px hsl(0 0% 0% / 1.00);
   --shadow-2xl: 4px 4px 0px 0px hsl(0 0% 0% / 2.50);
+
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 10, 10, 20;
+  --background-end-rgb: 15, 15, 30;
+  --glow-color: 124, 58, 237;
 }
 
 @theme inline {
@@ -157,7 +162,36 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px rgba(124, 58, 237, 0.7);
+  }
+
+  .card-glow {
+    box-shadow:
+      0 0 15px rgba(124, 58, 237, 0.2),
+      0 0 30px rgba(124, 58, 237, 0.1);
+  }
+
+  .glassmorphism {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  min-height: 100vh;
+  overflow-x: hidden;
 }
