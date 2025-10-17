@@ -12,7 +12,7 @@ const featuresData = [
         subtitle:
             "Easily create structured guides that combine text, images, and videos.",
         mainImage: {
-            src: "https://via.placeholder.com/480x560",
+            src: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png",
             alt: "Step-by-step instructions",
             width: 480,
             height: 560,
@@ -53,7 +53,7 @@ const featuresData = [
         title: "Customizable Themes",
         subtitle: "Style your instructions to match your brand and identity.",
         mainImage: {
-            src: "https://via.placeholder.com/480x560",
+            src: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png",
             alt: "Customizable Themes",
             width: 480,
             height: 560,
@@ -94,7 +94,7 @@ const featuresData = [
         title: "Analytics Dashboard",
         subtitle: "Gain real-time insights into user engagement and performance.",
         mainImage: {
-            src: "https://via.placeholder.com/480x560",
+            src: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png",
             alt: "Analytics Dashboard",
             width: 480,
             height: 560,
@@ -135,7 +135,7 @@ const featuresData = [
         title: "Easy Sharing",
         subtitle: "Distribute your guides effortlessly with multiple sharing options.",
         mainImage: {
-            src: "https://via.placeholder.com/480x560",
+            src: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png",
             alt: "Easy Sharing",
             width: 480,
             height: 560,
@@ -176,7 +176,7 @@ const featuresData = [
         title: "Team Collaboration",
         subtitle: "Work together to build and maintain instructions efficiently.",
         mainImage: {
-            src: "https://via.placeholder.com/480x560",
+            src: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png",
             alt: "Team Collaboration",
             width: 480,
             height: 560,
@@ -216,7 +216,7 @@ const featuresData = [
         title: "Secure & Reliable",
         subtitle: "Your data and instructions are safe with enterprise-grade security.",
         mainImage: {
-            src: "https://via.placeholder.com/480x560",
+            src: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png",
             alt: "Secure & Reliable",
             width: 480,
             height: 560,
