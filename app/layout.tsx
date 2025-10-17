@@ -15,7 +15,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Metro",
+<<<<<<< HEAD
   description: "A modern, instructions CMS for educators.",
+=======
+  description: "Next-generation instructions publishers for educators.",
+>>>>>>> landing-page
 };
 
 export default function RootLayout({

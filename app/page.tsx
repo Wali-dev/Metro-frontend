@@ -1,24 +1,16 @@
-"use client";
-import HeroSection from "./landingpage/components/HeroSection";
-import FeaturesSection from "./landingpage/components/FeaturesSection";
-import HowItWorksSection from "./landingpage/components/HowItWorksSection";
-import DemoSection from "./landingpage/components/DemoSection";
-import PricingSection from "./landingpage/components/PricingSection";
-import TestimonialsSection from "./landingpage/components/TestimonialsSection";
-import CtaSection from "./landingpage/components/CtaSection";
-import Footer from "./landingpage/components/Footer";
+import BrandSlider from "@/components/landingpage/components/BrandsSlider";
+import Header from "@/components/landingpage/components/Header";
+import HeroSection from "@/components/landingpage/components/HeroSection";
+import KeyFeatures from "@/components/landingpage/components/KeyFeaturesSection";
+
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-950 to-gray-900 text-white overflow-x-hidden">
+    <div>
+      <Header />
       <HeroSection />
-      <FeaturesSection />
-      <HowItWorksSection />
-      <DemoSection />
-      <PricingSection />
-      <TestimonialsSection />
-      <CtaSection />
-      <Footer />
+      <BrandSlider />
+      <KeyFeatures />
     </div>
   );
 }
